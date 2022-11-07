@@ -1,16 +1,18 @@
+/* BASIC TAGS */
 * {
-    font-family: 'Courier New', Courier, monospace;
-    color: crimson;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
 }
 
 body {
-    background-color: black;
+    background-color: rgb(255, 255, 101);
     display: flex;
     justify-content: center;
 }
 
+/* INITIAL SCREEN */
 #initial-screen-section {
-    display: flex;
+    display: none;
     justify-content: center;
     flex-direction: column;
     order: 0;
@@ -30,9 +32,25 @@ body {
 }
 
 #initial-button {
-    background-color: crimson;
-    color: black;
+    background-color: black;
+    color: yellow;
     font-size: 30px;
     width: 120px;
     border-radius: 10px;
+}
+
+/* GAME ELEMENTS */
+#time { 
+    font-size: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: black;
+    color: rgb(255, 255, 101);
+}
+
+#game-content-section {
+    display: none;
 }
