@@ -1,0 +1,38 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    color: crimson;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+#initial-screen-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    order: 0;
+}
+
+#initial-title-h1 {
+    text-decoration: underline;
+    font-size: 40px;
+}
+
+#initial-span {
+    font-size: 20px;
+}
+
+#initial-desc {
+    width: 700px;
+}
+
+#initial-button {
+    background-color: crimson;
+    color: black;
+    font-size: 30px;
+    width: 120px;
+    border-radius: 10px;
+}
