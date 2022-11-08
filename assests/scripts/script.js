@@ -1,31 +1,37 @@
-// let initialButton = document.getElementById("initial-button")
-// initialButton.addEventListener("click", jsGame)
+let initialButton = document.getElementById("initial-button")
+initialButton.addEventListener("click", jsGame)
 
 
 
-// TIMER
-let timer = 5
+// TIMER INITIALIZATION
+let timer = 60
 let timerElement = document.getElementById("time")
 let gameOver = false
 function refreshTime(){
     timerElement.innerHTML = "Time left: " + timer
-    console.log(timer)
-    if(timer === 0){
+    if(timer <= 0){
+        timerElement.innerHTML = "Time left: 0"
         clearInterval(timeInterval)
         gameOver = true
     }else{
         timer -= 1
     }
 }
-timeInterval = setInterval(refreshTime, 1000);
 
-function askQuestion(){
-    
+function incorrectAnswer(){
+    timer -= 5
+    questionsLeft -= 1
+    askQuestion()
 }
 
-function jsGame(){
-    // document.getElementById("initial-screen-section").style.display = "none"
-    let gameSection = document.getElementById("game-content-section")
+function correctAnswer(){
+    timer += 5
+    questionsLeft -= 1
+    askQuestion()
+}
+
+let questionsLeft = 7
+function askQuestion(){
     let questionEl = document.getElementById("game-question")
     let answer1 = document.getElementById("answer1")
     let answer2 = document.getElementById("answer2")
@@ -54,13 +60,26 @@ function jsGame(){
             ["Array", "String", "Toilet", "Object"]
         ]
     }
-        indexSelect = Math.floor(Math.random() * questionIndex.questions.length)
-        gameSection.style.display = "flex"
-        questionEl.innerHTML = questionIndex.questions[indexSelect]
-        answer1.innerHTML = questionIndex.answers[indexSelect][0]
-        answer2.innerHTML = questionIndex.answers[indexSelect][1]
-        answer3.innerHTML = questionIndex.answers[indexSelect][2]
-        answer4.innerHTML = questionIndex.answers[indexSelect][3]
+        questionEl.innerHTML = questionIndex.questions[questionsLeft]
+        answer1.innerHTML = questionIndex.answers[questionsLeft][0]
+        answer1.addEventListener("click", correctAnswer)
+
+        answer2.innerHTML = questionIndex.answers[questionsLeft][1]
+        answer2.addEventListener("click", incorrectAnswer)
+
+        answer3.innerHTML = questionIndex.answers[questionsLeft][2]
+        answer2.addEventListener("click", incorrectAnswer)
+
+        answer4.innerHTML = questionIndex.answers[questionsLeft][3]
+        answer2.addEventListener("click", incorrectAnswer)
+        console.log(questionsLeft)
+}
+
+function jsGame(){
+    timeInterval = setInterval(refreshTime, 1000);
+    document.getElementById("initial-screen-section").style.display = "none"
+    let gameSection = document.getElementById("game-content-section")
+    gameSection.style.display = "flex"
+    askQuestion()
     
 }
-jsGame()

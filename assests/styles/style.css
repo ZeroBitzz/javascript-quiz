@@ -12,7 +12,7 @@ body {
 
 /* INITIAL SCREEN */
 #initial-screen-section {
-    display: none;
+    display: flex;
     justify-content: center;
     flex-direction: column;
     order: 0;
