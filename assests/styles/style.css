@@ -33,7 +33,7 @@ body {
 
 #initial-button {
     background-color: black;
-    color: yellow;
+    color: rgb(255, 255, 101);
     font-size: 30px;
     width: 120px;
     border-radius: 10px;
@@ -52,5 +52,24 @@ body {
 }
 
 #game-content-section {
+    margin-top: 10%;
+    font-size: 30px;
     display: none;
+    justify-content: center;
+    flex-direction: column;
+    order: 0;
+}
+
+#game-question {
+    margin-bottom: 0px;
+}
+
+.answer-button {
+    background-color: black;
+    color: rgb(255, 255, 101);
+    font-size: 20px;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
