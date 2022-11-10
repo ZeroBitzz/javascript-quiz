@@ -30,6 +30,10 @@ function correctAnswer(){
     askQuestion()
 }
 
+function endGame(){
+    
+}
+
 function removeElmFromArr(removeElmArr, elmToRemove){
     newArr = []
     for(let i=0; i<removeElmArr.length; i++){
@@ -41,7 +45,6 @@ function removeElmFromArr(removeElmArr, elmToRemove){
     }
     return newArr
 }
-
 
 let questionsLeft = 7
 let questionEl = document.getElementById("game-question")
@@ -76,7 +79,6 @@ function askQuestion(){
 
     // RAND ARR INDEX KEEPS THE QUESTION AND ANSWER VARIABLES CONNECTED
     let randArrIndex = Math.floor(Math.random() * questionIndex.questions.length)
-
     // SETS WHICH CURRENT ARRAYS ARE BEING USED FOR QUESTION AND ANSWER, AND REMOVES THE QUESTION FROM THE ARRAY
     let currentAnswerArr = questionIndex.answers[randArrIndex]
     let currentQuestion = questionIndex.questions[randArrIndex]
@@ -90,17 +92,16 @@ function askQuestion(){
 
     // GRABS A RANDOM ANSWER TO PUT IN BUTTON ELEMENT, THEN REMOVES THAT ELEMENT SO THERE IS NO DUPLICATES
     let randAnswer = currentAnswerArr[Math.floor(Math.random() * currentAnswerArr.length)]
-    questionIndex.answers = removeElmFromArr(questionIndex.answers, randAnswer)
-
+    currentAnswerArr = removeElmFromArr(currentAnswerArr, randAnswer)
+    
     // SETS THE BUTTON TEXT TO THE ANSWER ON PAGE, THEN ADDS EVENT LISTENER
     answer1.innerHTML = randAnswer
     answer1.addEventListener("click", correctAnswer)
-    console.log(randArrIndex)
     console.log(currentQuestion)
     console.log(correctAnswerVal)
-    console.log()
-    console.log(questionIndex.answers)
-    console.log(questionIndex.questions)
+    // console.log()
+    // console.log(questionIndex.answers)
+    // console.log(questionIndex.questions)
 
     randAnswer = currentAnswerArr[Math.floor(Math.random() * currentAnswerArr.length)]
     currentAnswerArr = removeElmFromArr(currentAnswerArr, randAnswer)
@@ -116,7 +117,9 @@ function askQuestion(){
     currentAnswerArr = removeElmFromArr(currentAnswerArr, randAnswer)
     answer4.innerHTML = randAnswer
     answer4.addEventListener("click", incorrectAnswer)
-    console.log(questionsLeft)
+
+    questionIndex.answers.splice(randArrIndex, 1)
+    console.log(questionIndex.answers)
 }
 
 function jsGame(){
