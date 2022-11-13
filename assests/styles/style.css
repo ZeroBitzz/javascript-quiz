@@ -1,13 +1,18 @@
 /* BASIC TAGS */
 * {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: black;
+    color: rgb(255, 255, 101);
 }
 
 body {
-    background-color: rgb(255, 255, 101);
+    background-color: black;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+}
+
+h2 {
+    width: 230px;
 }
 
 /* INITIAL SCREEN */
@@ -15,6 +20,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-left: 200px;
     order: 0;
 }
 
@@ -32,11 +38,15 @@ body {
 }
 
 #initial-button {
-    background-color: black;
-    color: rgb(255, 255, 101);
+    background-color: rgb(255, 255, 101);
+    color: black;
     font-size: 30px;
     width: 120px;
     border-radius: 10px;
+}
+#initial-button:hover {
+    background-color: grey;
+    cursor: pointer;
 }
 
 /* GAME ELEMENTS */
@@ -52,9 +62,10 @@ body {
 }
 
 #game-content-section {
-    background-color: grey;
+    background-color: rgb(44, 44, 44);
     padding: 5px;
-    margin-top: 20%;
+    margin-top: 50%;
+    margin-left: 30%px;
     margin-right: 5px;
     border-radius: 10px;
     left: 100px;
@@ -78,8 +89,74 @@ body {
     border-radius: 10px;
     margin-bottom: 10px;
 }
+.answer-button:hover {
+    color: black;
+    background-color: rgb(255, 255, 101);
+    cursor: pointer;
+}
 
 /* END GAME ELEMENTS */
+#end-game-section {
+    display: none;
+    flex-direction: column;
+    font-size: 40px;
+    margin-left: 500px;
+}
+
+#retry-button {
+    background-color: rgb(255, 255, 101);
+    color: black;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 10px;
+    width: fit-content;
+}
+#retry-button:hover {
+    background-color: grey;
+    color: rgb(255, 255, 101);
+    cursor: pointer;
+}
+
 #score-span {
     display: none;
+    text-decoration: underline;
+}
+
+/* HIGHSCORES SECTION */
+
+#highscores-section {
+    margin-left: 200px;
+    margin-top: 200px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+#highscores-title {
+    text-decoration: underline;
+}
+
+/* INITIALS FORM */
+#initials-form {
+    display: none;
+    flex-direction: column;
+    margin-left: 500px;
+    margin-top: 100px;
+}
+
+#initials-input {
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    color: rgb(255, 255, 101);
+    background-color: rgb(44, 44, 44);
+}
+
+#submit-button {
+    width: 150px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    color: black;
+    background-color: rgb(255, 255, 101);
 }
