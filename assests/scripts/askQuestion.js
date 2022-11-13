@@ -1,3 +1,30 @@
+// IMPORTS
+import { 
+    questionsLeft, questionIndex, incorrectAnswer, correctAnswer, endGame
+} from "./mainGame.js"
+
+// GLOBAL VARIABLES
+let answer1Correct, answer2Correct, answer3Correct, answer4Correct = false
+let questionEl = document.getElementById("game-question")
+let answer1 = document.getElementById("answer1")
+let answer2 = document.getElementById("answer2")
+let answer3 = document.getElementById("answer3")
+let answer4 = document.getElementById("answer4")
+
+// REMOVES SPECIFIC ELEMENTS FROM AN ARRAY
+function removeElmFromArr(removeElmArr, elmToRemove){
+    let newArr = []
+    for(let i=0; i<removeElmArr.length; i++){
+        if(removeElmArr[i] === elmToRemove){
+            continue
+        }
+        else{
+            newArr.push(removeElmArr[i])
+        }
+    }
+    return newArr
+}
+
 export function askQuestion(){
     // CHECKS IF THERE ARE NO QUESTIONS LEFT TO ASK
     questionsLeft <= 0 ? endGame() : null
