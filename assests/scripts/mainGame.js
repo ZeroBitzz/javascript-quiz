@@ -1,5 +1,6 @@
 // IMPORTS
-import { askQuestion } from './askQuestion.js'
+import { askQuestion, answer1, answer1Correct, answer2Correct, answer3Correct, answer4Correct,
+    answer2, answer3, answer4 } from './askQuestion.js'
 
 // PREVENTS PAGE FROM RELOADING WHEN YOU ENTER YOUR INITIALS
 let form = document.getElementById("initials-form");
@@ -28,7 +29,6 @@ export let correctAnswers = 0
 
 export function incorrectAnswer(){ // function if answer selected is incorrect
     console.log('wrong')
-    console.log()
     timer -= 50
     questionsLeft -= 1
     incorrectAnswers += 1
@@ -37,36 +37,11 @@ export function incorrectAnswer(){ // function if answer selected is incorrect
 
 export function correctAnswer(){ // function if answer selected is correct
     console.log('right')
-    console.log()
     timer += 20
     questionsLeft -= 1
     correctAnswers += 1
     askQuestion()
-}
-
-export let questionIndex = { // object containing questions and answers for game
-    questions: [
-        "What type is this: \"word\"",
-        "What type is this: 42",
-        "What type is true or false?",
-        "Java and Javascript are the same thing.",
-        "I want to repeat a complex set of tasks, I should use a",
-        "I want to save the value 3.14 for later, I should use a",
-        "I want to scan each value in an array, I should use a",
-        "I want to log the alternate realities I have been to, I should use a",
-    ],
-    
-    answers: [
-        ["String", "Integer", "Boolean", "Ternary"],
-        ["Integer", "String", "Boolean", "Ternary"],
-        ["Boolean", "Integer", "String", "Ternary"],
-        ["False", "True", "I dont know", "Obscure question"],
-        ["Function", "Interdimensional Portal", "Method", "Constructor"],
-        ["Variable", "Array", "A box", "Function"],
-        ["Loop", "Function", "Scanner", "Constructor"],
-        ["Array", "String", "Toilet", "Method"]
-    ]
-}   
+}  
 
 // MAIN JS GAME FUNCTION
 function jsGame(){
