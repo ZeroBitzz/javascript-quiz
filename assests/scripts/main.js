@@ -2,11 +2,15 @@
 import { askQuestion, answer1, answer1Correct, answer2Correct, answer3Correct, answer4Correct,
     answer2, answer3, answer4 } from './askQuestion.js'
 import {addHighscore} from './addHighscore.js'
+import {updateScores} from './updateScores.js'
 
 // PREVENTS PAGE FROM RELOADING WHEN YOU ENTER YOUR INITIALS
 let form = document.getElementById("initials-form");
 function handleForm(event) { event.preventDefault(); } 
 form.addEventListener('submit', handleForm);
+
+// UPDATES SCORES FROM LOCAL STORAGE TO PAGE
+updateScores()
 
 // EVENT LISTENER TO START THE GAME
 let initialButton = document.getElementById("initial-button")
