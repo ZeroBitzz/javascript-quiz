@@ -1,7 +1,7 @@
 // IMPORTS
 import { 
     questionsLeft, incorrectAnswer, correctAnswer, endGame
-} from "./mainGame.js"
+} from "./main.js"
 
 // GLOBAL VARIABLES
 export let answer1Correct, answer2Correct, answer3Correct, answer4Correct = false
@@ -101,9 +101,7 @@ export function askQuestion(){
         answer1Correct = true
         console.log(randAnswer + ' is correct')
         answer1.addEventListener("click", correctAnswer)
-    }else{
-        answer1.addEventListener("click", incorrectAnswer)
-    }
+    }else{answer1.addEventListener("click", incorrectAnswer)}
     
 
     randAnswer = currentAnswerArr[Math.floor(Math.random() * currentAnswerArr.length)]
@@ -113,9 +111,7 @@ export function askQuestion(){
         answer2Correct = true
         console.log(randAnswer + ' is correct')
         answer2.addEventListener("click", correctAnswer)
-    }else{
-        answer2.addEventListener("click", incorrectAnswer)
-    }
+    }else{answer2.addEventListener("click", incorrectAnswer)}
     
     randAnswer = currentAnswerArr[Math.floor(Math.random() * currentAnswerArr.length)]
     currentAnswerArr = removeElmFromArr(currentAnswerArr, randAnswer)
@@ -124,9 +120,7 @@ export function askQuestion(){
         answer3Correct = true
         console.log(randAnswer + ' is correct')
         answer3.addEventListener("click", correctAnswer)
-    }else{
-        answer3.addEventListener("click", incorrectAnswer)
-    }
+    }else{answer3.addEventListener("click", incorrectAnswer)}
     
     randAnswer = currentAnswerArr[Math.floor(Math.random() * currentAnswerArr.length)]
     currentAnswerArr = removeElmFromArr(currentAnswerArr, randAnswer)
@@ -135,10 +129,8 @@ export function askQuestion(){
         answer4Correct = true
         console.log(randAnswer + ' is correct')
         answer4.addEventListener("click", correctAnswer)
-    }else{
-        answer4.addEventListener("click", incorrectAnswer)
-    }
+    }else{answer4.addEventListener("click", incorrectAnswer)}
     
-    // REMOVES THE ANSWERS SO THEY DONT REPEAT
+    // REMOVES THE ANSWERS FROM ANSWER ARRAY IN QUESTION INDEX SO THEY DONT REPEAT
     questionIndex.answers.splice(randArrIndex, 1)
 }

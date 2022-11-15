@@ -1,6 +1,7 @@
 // IMPORTS
 import { askQuestion, answer1, answer1Correct, answer2Correct, answer3Correct, answer4Correct,
     answer2, answer3, answer4 } from './askQuestion.js'
+import {addHighscore} from './addHighscore.js'
 
 // PREVENTS PAGE FROM RELOADING WHEN YOU ENTER YOUR INITIALS
 let form = document.getElementById("initials-form");
@@ -68,10 +69,16 @@ function refreshTime(){
 // END GAME FUNCTION, RELOAD PAGE HELPER FUNCTION, AND VARIABLES FOR END GAME FUNCTION
 function reloadPage(){location.reload()}
 let initialsForm = document.getElementById("initials-form")
+let initialsFormSubmitButton = document.getElementById("submit-button")
 let endGameSectionElm = document.getElementById("end-game-section")
 let scoreElement = document.getElementById("score-span")
 let retryButtonElement = document.getElementById("retry-button")
+export let endTime, endScore
 export function endGame(){
+    localStorage.setItem('scoreEntered', 'no') //this line is so you only can enter your score once every time you play. Also used in addHighscore.js
+    endTime = timer
+    endScore = correctAnswers
+    initialsFormSubmitButton.addEventListener("click", addHighscore)
     retryButtonElement.addEventListener("click", reloadPage) // reloads the page when button is clicked
     initialsForm.style.display = "flex"
     endGameSectionElm.style.display = "flex"
