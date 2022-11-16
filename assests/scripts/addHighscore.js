@@ -44,13 +44,13 @@ export function addHighscore(){
 
     if(localStorage.getItem('scoreEntered') === 'no'){
         if(endScore === 0){
-            statusElement.innerHTML = "You can't enter a score when you got zero correct."
+            statusElement.innerHTML = "You can't submit a score when you got zero correct."
         }else if(initials === ''){
             statusElement.innerHTML = "Please enter a name/initials."
         }else{
             localStorage.setItem('scoreEntered', 'yes') //this is so the score can only be entered once every time you play the game
             if(score1 <= endScore){
-                if(localStorage.getItem('time1') < playerTime / 10){
+                if(localStorage.getItem('time1') < playerTime / 10 ){
                     localStorage.setItem('score5', localStorage.getItem('score4'))
                     localStorage.setItem('time5', localStorage.getItem('time4'))
                     localStorage.setItem('initials5', localStorage.getItem('initials4'))
