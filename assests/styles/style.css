@@ -34,7 +34,7 @@ h2 {
 }
 
 #initial-desc {
-    max-width: 700px;
+    width: 700px;
 }
 
 #initial-button {
@@ -132,10 +132,6 @@ h2 {
 
 #highscores-title {
     text-decoration: underline;
-}
-
-.highscoreElm {
-    margin-top: 5px;
 }
 
 /* INITIALS FORM */
