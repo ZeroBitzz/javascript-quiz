@@ -44,7 +44,15 @@ export function addHighscore(){
     let score4 = Number(localStorage.getItem('score4'))
     let score5 = Number(localStorage.getItem('score5'))
 
+    let time1 = Number(localStorage.getItem('time1'))
+    let time2 = Number(localStorage.getItem('time2'))
+    let time3 = Number(localStorage.getItem('time3'))
+    let time4 = Number(localStorage.getItem('time4'))
+    let time5 = Number(localStorage.getItem('time5'))
+
     if(localStorage.getItem('scoreEntered') === 'no'){
+        console.log(endTime, endScore)
+        console.log(time1, time2, time3, time4, time5)
         if(endScore === 0){
             statusElement.innerHTML = "You can't submit a score when you got zero correct."
         }else if(initials === ''){
@@ -52,7 +60,7 @@ export function addHighscore(){
         }else{
             localStorage.setItem('scoreEntered', 'yes') //this is so the score can only be entered once every time you play the game
             if(score1 <= endScore){
-                if(localStorage.getItem('time1') < playerTime / 10 ){
+                if(time1 < playerTime / 10 ){
                     localStorage.setItem('score5', localStorage.getItem('score4'))
                     localStorage.setItem('time5', localStorage.getItem('time4'))
                     localStorage.setItem('initials5', localStorage.getItem('initials4'))
@@ -79,7 +87,7 @@ export function addHighscore(){
                     highscoreElm1.innerHTML = `#1 - ${localStorage.getItem('initials1')} / score: ${localStorage.getItem('score1')} / time: ${localStorage.getItem('time1')} seconds`
                 }
             }else if(score2 <= endScore){
-                if(localStorage.getItem('time2') < playerTime / 10){
+                if(time2 < playerTime / 10){
                     localStorage.setItem('score5', localStorage.getItem('score4'))
                     localStorage.setItem('time5', localStorage.getItem('time4'))
                     localStorage.setItem('initials5', localStorage.getItem('initials4'))
@@ -101,7 +109,7 @@ export function addHighscore(){
                     highscoreElm2.innerHTML = `#2 - ${localStorage.getItem('initials2')} / score: ${localStorage.getItem('score2')} / time: ${localStorage.getItem('time2')} seconds`
                 }
             }else if(score3 <= endScore){
-                if(localStorage.getItem('time3') < playerTime / 10){
+                if(time3 < playerTime / 10){
                     localStorage.setItem('score5', localStorage.getItem('score4'))
                     localStorage.setItem('time5', localStorage.getItem('time4'))
                     localStorage.setItem('initials5', localStorage.getItem('initials4'))
@@ -118,7 +126,7 @@ export function addHighscore(){
                     highscoreElm3.innerHTML = `#3 - ${localStorage.getItem('initials3')} / score: ${localStorage.getItem('score3')} / time: ${localStorage.getItem('time3')} seconds`
                 }
             }else if(score4 <= endScore){
-                if(localStorage.getItem('time4') < playerTime / 10){
+                if(time4 < playerTime / 10){
                     localStorage.setItem('score5', localStorage.getItem('score4'))
                     localStorage.setItem('time5', localStorage.getItem('time4'))
                     localStorage.setItem('initials5', localStorage.getItem('initials4'))
@@ -131,7 +139,7 @@ export function addHighscore(){
                 }
             }
             else if(score5 <= endScore){
-                if(localStorage.getItem('time5') < playerTime / 10){
+                if(time5 < playerTime / 10){
                     localStorage.setItem('score5', endScore)
                     localStorage.setItem('time5', playerTime / 10)
                     localStorage.setItem('initials5', initials)
