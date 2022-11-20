@@ -78,6 +78,7 @@ let endGameSectionElm = document.getElementById("end-game-section")
 let scoreElement = document.getElementById("score-span")
 let retryButtonElement = document.getElementById("retry-button")
 export let endTime, endScore
+export function zeroEndTime(){endTime = 0}
 export function endGame(){
     localStorage.setItem('scoreEntered', 'no') //this line is so you only can enter your score once every time you play. Also used in addHighscore.js
     endTime = timer
