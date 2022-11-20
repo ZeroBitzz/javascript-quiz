@@ -36,11 +36,11 @@ export function addHighscore(){
     let highscoreElm3 = document.getElementById("highscore3")
     let highscoreElm4 = document.getElementById("highscore4")
     let highscoreElm5 = document.getElementById("highscore5")
-    let score1 = localStorage.getItem('score1')
-    let score2 = localStorage.getItem('score2')
-    let score3 = localStorage.getItem('score3')
-    let score4 = localStorage.getItem('score4')
-    let score5 = localStorage.getItem('score5')
+    let score1 = Number(localStorage.getItem('score1'))
+    let score2 = Number(localStorage.getItem('score2'))
+    let score3 = Number(localStorage.getItem('score3'))
+    let score4 = Number(localStorage.getItem('score4'))
+    let score5 = Number(localStorage.getItem('score5'))
 
     if(localStorage.getItem('scoreEntered') === 'no'){
         if(endScore === 0){
