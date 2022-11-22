@@ -99,7 +99,6 @@ export function askQuestion(){
     // CHECKS IF THE ANSWER IS THE CORRECT ANSWER TO ADD CORRESPONDING EVENT LISTENER(REPEATED FOR EVERY BUTTON)
     if(answer1.innerHTML === correctAnswerVal){
         answer1Correct = true
-        console.log(randAnswer + ' is correct')
         answer1.addEventListener("click", correctAnswer)
     }else{answer1.addEventListener("click", incorrectAnswer)}
     
@@ -109,7 +108,6 @@ export function askQuestion(){
     answer2.innerHTML = randAnswer
     if(answer2.innerHTML === correctAnswerVal){
         answer2Correct = true
-        console.log(randAnswer + ' is correct')
         answer2.addEventListener("click", correctAnswer)
     }else{answer2.addEventListener("click", incorrectAnswer)}
     
@@ -118,7 +116,6 @@ export function askQuestion(){
     answer3.innerHTML = randAnswer
     if(answer3.innerHTML === correctAnswerVal){
         answer3Correct = true
-        console.log(randAnswer + ' is correct')
         answer3.addEventListener("click", correctAnswer)
     }else{answer3.addEventListener("click", incorrectAnswer)}
     
@@ -127,7 +124,6 @@ export function askQuestion(){
     answer4.innerHTML = randAnswer
     if(answer4.innerHTML === correctAnswerVal){
         answer4Correct = true
-        console.log(randAnswer + ' is correct')
         answer4.addEventListener("click", correctAnswer)
     }else{answer4.addEventListener("click", incorrectAnswer)}
     

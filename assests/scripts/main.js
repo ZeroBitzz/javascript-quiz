@@ -33,7 +33,6 @@ export let incorrectAnswers = 0
 export let correctAnswers = 0
 
 export function incorrectAnswer(){ // function if answer selected is incorrect
-    console.log('wrong')
     timer -= 50
     questionsLeft -= 1
     incorrectAnswers += 1
@@ -41,7 +40,6 @@ export function incorrectAnswer(){ // function if answer selected is incorrect
 }
 
 export function correctAnswer(){ // function if answer selected is correct
-    console.log('right')
     timer += 20
     questionsLeft -= 1
     correctAnswers += 1
@@ -78,7 +76,7 @@ let endGameSectionElm = document.getElementById("end-game-section")
 let scoreElement = document.getElementById("score-span")
 let retryButtonElement = document.getElementById("retry-button")
 export let endTime, endScore
-export function zeroEndTime(){endTime = 0}
+export function zeroEndTime(){endTime = 0} // function that sets endtime to zero
 export function endGame(){
     localStorage.setItem('scoreEntered', 'no') //this line is so you only can enter your score once every time you play. Also used in addHighscore.js
     endTime = timer

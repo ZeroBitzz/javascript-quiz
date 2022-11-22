@@ -1,12 +1,13 @@
 //IMPORTS
 import { endScore, endTime, zeroEndTime } from "./main.js"
 import { updateScores } from "./updateScores.js"
-// localStorage.clear()
-let playerScore
+
+
 let playerTime
 export function addHighscore(){
-    endTime < 0 ? zeroEndTime() : null
+    endTime < 0 ? zeroEndTime() : null // makes sure the endtime is not negative, if it is, it sets it to zero
 
+    // LOCAL STORAGE VARIABLES
     let time1 = Number(localStorage.getItem('time1'))
     let time2 = Number(localStorage.getItem('time2'))
     let time3 = Number(localStorage.getItem('time3'))
@@ -23,26 +24,30 @@ export function addHighscore(){
     localStorage.getItem('score1') === null ? localStorage.setItem('score1', 0) : null
     localStorage.getItem('time1') === null || localStorage.getItem('time1') < 0 ? localStorage.setItem('time1', 0) : null
     localStorage.getItem('initials1') === null ? localStorage.setItem('initials1', 0) : null
+
     //SETS VALUES FOR HIGHSCORE2
     localStorage.getItem('score2') === null ? localStorage.setItem('score2', 0) : null
     localStorage.getItem('time2') === null || localStorage.getItem('time2') < 0 ? localStorage.setItem('time2', 0) : null
     localStorage.getItem('initials2') === null ? localStorage.setItem('initials2', 0) : null
+
     //SETS VALUES FOR HIGHSCORE3
     localStorage.getItem('score3') === null ? localStorage.setItem('score3', 0) : null
     localStorage.getItem('time3') === null || localStorage.getItem('time3') < 0 ? localStorage.setItem('time3', 0) : null
     localStorage.getItem('initials3') === null ? localStorage.setItem('initials3', 0) : null
+
     //SETS VALUES FOR HIGHSCORE4 
     localStorage.getItem('score4') === null ? localStorage.setItem('score4', 0) : null
     localStorage.getItem('time4') === null || localStorage.getItem('time4') < 0 ? localStorage.setItem('time4', 0) : null
     localStorage.getItem('initials4') === null ? localStorage.setItem('initials4', 0) : null
+
     //SETS VALUES FOR HIGHSCORE5 
     localStorage.getItem('score5') === null ? localStorage.setItem('score5', 0) : null
     localStorage.getItem('time5') === null || localStorage.getItem('time5') < 0 ? localStorage.setItem('time5', 0) : null
     localStorage.getItem('initials5') === null ? localStorage.setItem('initials5', 0) : null
 
+    // DOM VARIABLES
     let initialsInput = document.getElementById("initials-input")
     let initials = initialsInput.value
-    playerScore = endScore
     playerTime = endTime
     let statusElement = document.getElementById("status-element")
     let highscoreElm1 = document.getElementById("highscore1")
@@ -51,16 +56,7 @@ export function addHighscore(){
     let highscoreElm4 = document.getElementById("highscore4")
     let highscoreElm5 = document.getElementById("highscore5")
 
-
-
-
-    console.log(time1)
-    console.log(time2)
-    console.log(time3)
-    console.log(time4)
-    console.log(time5)
-
-    if(localStorage.getItem('scoreEntered') === 'no'){
+    if(localStorage.getItem('scoreEntered') === 'no'){ // this line only allows you to submit a highscore once for each playthrough
         if(endScore === 0){
             statusElement.innerHTML = "You can't submit a score when you got zero correct."
         }else if(initials === ''){
@@ -68,8 +64,9 @@ export function addHighscore(){
         }else{
             console.log('checkpoint 1')
             localStorage.setItem('scoreEntered', 'yes') //this is so the score can only be entered once every time you play the game
-            if(score1 <= endScore){
+            if(score1 <= endScore){ // this line checks the score, then the next if statement checks the time, for each highscore
                 if(time1 < playerTime / 10 || time1 === 0){
+                    // RESETS THE HIGHSCORE LIST, NEEDS REFACTORING
                     localStorage.setItem('score5', localStorage.getItem('score4'))
                     localStorage.setItem('time5', time4)
                     localStorage.setItem('initials5', localStorage.getItem('initials4'))
